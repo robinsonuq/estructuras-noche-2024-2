@@ -1,6 +1,8 @@
 package generics;
 
-public class ArrayList<C> {
+import java.util.Iterator;
+
+public class ArrayList<C> implements Iterable<C>{
 
 	java.util.ArrayList<C> cosas = new java.util.ArrayList<>();
 	
@@ -15,6 +17,10 @@ public class ArrayList<C> {
 	}
 	public C get(int i) {
 		return cosas.get(i);
+	}
+	@Override
+	public Iterator<C> iterator() {
+		return new IteradorMio<C>(1,cosas);
 	}
 	
 

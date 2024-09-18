@@ -1,6 +1,8 @@
 package generics;
 
-public class Par<N> {
+import java.util.Iterator;
+
+public class Par<N> implements Iterable<N> {
 	private N a, b;
 	public Par(N a, N b){
 		this.a = a;
@@ -10,8 +12,13 @@ public class Par<N> {
 		return new Par<N>(b, a);
 	}	
 	
-	public <N> max(){
+	public T max(){
 		return ((a>b) ? a : b);
+	}
+	@Override
+	public Iterator<N> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
